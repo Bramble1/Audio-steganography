@@ -1,6 +1,6 @@
 # audio-steganography
 
-Proof of concept Audio steganography program. This is the first prototype, which only does a basic lsb infection at this time.
+Proof of concept Audio steganography program to hide secret messages inside unsuspecting Audio Files. This is the first prototype, which only does a basic lsb infection at this time.
 
 # Instructions
 
