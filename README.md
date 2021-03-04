@@ -6,7 +6,7 @@ Proof of concept Audio steganography program to hide secret messages inside unsu
 
 Compile and setup
 
-       u+x compile.sh
+       chmod u+x compile.sh
       ./compile.sh
       
 run the following with no arguments to see help instructions on using the program
