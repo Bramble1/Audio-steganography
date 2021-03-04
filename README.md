@@ -37,3 +37,5 @@ To extract the secret message from the mp3 testfile the program requires the fol
 *Note.2: This is a very quick prototype, started and completed in a day, just as a proof of concept. Not much error checking has been added. I don't claim it's as efficient as it could be. Which will be improved upon in future updates.
 
 *Note.3: This has only been tested against .mp3 soundfiles.
+
+*Note.4: Don't forget to put your secret message within " " (double quotes , especially if your secret message is more than one word and has special symbols)
