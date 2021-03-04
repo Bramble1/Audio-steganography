@@ -33,4 +33,7 @@ To extract the secret message from the mp3 testfile the program requires the fol
 
 *Note.1: the Audiofile becomes unplayable if you replace every lsb of every byte, so message length is a factor. So be careful how long your secret message is. I have not tested boundries but I've tested changing the lsb of every byte in the file, which destroys the soundfile.
 
+
 *Note.2: This is a very quick prototype, started and completed in a day, just as a proof of concept. Not much error checking has been added. I don't claim it's as efficient as it could be. Which will be improved upon in future updates.
+
+*Note.3: This has only been tested against .mp3 soundfiles.
