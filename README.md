@@ -28,3 +28,9 @@ To extract the secret message from the mp3 testfile the program requires the fol
 1. Provide other ways of infecting the audio file, at the moment this prototype only does infection by least significant bit.(More infection methods will be added)
 2. Create some obsfucation techniques to better hide the secret message inside the audio file to avoid detection from forensic investigation.
 3. Ability to encrypt.
+4. Annotate code
+5. Add more error handling/checking/logging
+
+*Note.1: the Audiofile becomes unplayable if you replace every lsb of every byte, so message length is a factor. So be careful how long your secret message is. I have not tested boundries but I've tested changing the lsb of every byte in the file, which destroys the soundfile.
+
+*Note.2: This is a very quick prototype, started and completed in a day, just as a proof of concept. Not much error checking has been added. I don't claim it's as efficient as it could be. Which will be improved upon in future updates.
