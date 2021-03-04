@@ -46,3 +46,5 @@ To extract the secret message from the mp3 testfile the program requires the fol
 
 
 **Note.4**: Don't forget to put your secret message within " " (double quotes , especially if your secret message is more than one word and has special symbols)
+
+**Note.5**: An Mp3 file is already supplied for testing which is then moved to the current directory from the backup audio directory to be used for testing the program against.
