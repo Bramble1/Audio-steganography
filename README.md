@@ -27,7 +27,7 @@ To extract the secret message from the mp3 testfile the program requires the fol
 
 **1.** Provide other ways of infecting the audio file, at the moment this prototype only does infection by least significant bit.(More infection methods will be added)
 
-**2.** Create some obsfucation techniques to better hide the secret message inside the audio file to avoid detection from forensic investigation
+**2.** Create some obfuscation techniques to better hide the secret message inside the audio file to avoid detection from forensic investigation
 
 **3.** Ability to encrypt.
 
