@@ -3,11 +3,12 @@
 int main(int argc, char **argv)
 {
 	
-	struct binary_info binary;
+	struct binary_info AudioFile;
+	struct binary_info efile;
 
 	if(argc<2)
 	{
-		printf("./stegbot <i> <\"message\"> <audiofile.mp3>\n");
+		printf("./stegbot <i> <file.gpg> <audiofile.mp3>\n");
 		printf("./stegbot <x> <audiofile.mp3>\n");
 		printf("\ni=import\nx=export\n");
 		exit(EXIT_FAILURE);
@@ -17,19 +18,32 @@ int main(int argc, char **argv)
 	{
 		if(argc!=4)
 		{
-			printf("./stegbot <i> <\"message\"> <audiofile.mp3>\n");
+			printf("./stegbot <i> <textfile.gpg> <audiofile.mp3>\n");
 			exit(EXIT_FAILURE);
 		}
 
-		char size = strlen(argv[2]);
-		
-		map_binary(argv[3],&binary);
+		/*map the soundfile and the gpg file into memory*/
+		/*check to see if argv[2] contains .gpg file*/
 
-		lsb_basic_infection(argv[2],size,&binary);
 
-		store_message_length(&binary,size);
+		if(FileCheck(argv[2])==-1)
+		{
+			printf("[-]must be a .gpg encrypted file.\n");
+			exit(EXIT_FAILURE);
+		}else{
+			map_binary(argv[2],&efile);
 		
-		exit(EXIT_SUCCESS);
+			map_binary(argv[3],&AudioFile);
+
+			//lsb_basic_infection(argv[2],size,&binary);
+
+			/*infect with gpg_file*/
+			store_gpg_file(&efile,&AudioFile);
+
+			store_file_length(&AudioFile,efile.binary_size);
+		
+			exit(EXIT_SUCCESS);
+		}
 	}
 	else if(strcmp(argv[1],"x")==0)
 	{
@@ -41,11 +55,15 @@ int main(int argc, char **argv)
 
 		
 
-		map_binary(argv[2],&binary);
+		map_binary(argv[2],&AudioFile);
 	
-		char size = extract_message_length(&binary);
+		//char size = extract_message_length(&AudioFile);
 
-		extract_message_lsb(&binary,size);
+		//extract_message_lsb(&binary,size);
+
+		int size = extract_file_length(&AudioFile);
+
+		extract_gpg_file(&AudioFile,size);
 
 		exit(EXIT_SUCCESS);
 	} 

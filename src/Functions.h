@@ -24,3 +24,13 @@ void lsb_basic_infection(char *message,int message_length,struct binary_info *bi
 
 void extract_message_lsb(struct binary_info *binary,int message_length);
 
+
+/*gpg files*/
+void store_gpg_file(struct binary_info *efile,struct binary_info *sound_file);
+void extract_gpg_file(struct binary_info *binary,int file_size);
+void store_file_length(struct binary_info *Audio_file,int size);
+int extract_file_length(struct binary_info *Audio_file);
+
+/*regex checking functions*/
+int FileCheck(char *filename);
+
