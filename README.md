@@ -2,6 +2,8 @@
 
 Proof of concept Audio steganography program to hide secret messages inside unsuspecting Audio Files. This is the first prototype, which only does a basic lsb infection at this time.
 
+# update currenlty broken, however storing plain text bytes work, storing an encrypted pgp file has seeminly broken it. After some debugging i know the issue, and the basic proof of concept will be fixed.
+
 # Instructions
 
 Compile and setup
